@@ -1,9 +1,9 @@
 class Pessoa:
     def __init__(self, nome, cpf, telefone, email): 
-        self.__nome = nome 
+        self.__nome = nome #__ -> implementa o "private do python", possui por não possuir setter
         self.__cpf = cpf
-        self.__telefone = telefone
-        self.__email = email
+        self.telefone = telefone
+        self.email = email
 
     @property # O jeito que se implementa o Getter
     def nome(self):
