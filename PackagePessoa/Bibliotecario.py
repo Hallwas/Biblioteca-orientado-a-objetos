@@ -29,7 +29,7 @@ class Bibliotecario(Pessoa): #Herda de Pessoa
     def autorizar_emprestimo(self, emprestimo): #
         if emprestimo.item.esta_disponivel == True:
             # self.nome herdado de Pessoa
-            print(f"Bibliotecário(a) {self.nome} autorizou o empréstimo do item '{emprestimo.item.titulo}'.")
+            print(f"Bibliotecário {self.nome} autorizou o empréstimo do item '{emprestimo.item.titulo}'.")
             return True
         else:
             print(f"Empréstimo negado por {self.nome}: O item já está emprestado ou indisponível.")
