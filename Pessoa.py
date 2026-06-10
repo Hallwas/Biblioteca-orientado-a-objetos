@@ -21,7 +21,6 @@ class Pessoa:
     def telefone(self, novo_telefone):
         if len(novo_telefone) >= 8:
             self.__telefone = novo_telefone
-            print("Telefone atualizado com sucesso!")
         else:
             print("Erro: O número de telefone inserido é muito curto.")
 
@@ -33,7 +32,6 @@ class Pessoa:
     def email(self, novo_email):
         if "@" in novo_email and "." in novo_email:
             self.__email = novo_email
-            print("E-mail atualizado com sucesso!")
         else:
             print("Erro: Formato de e-mail inválido.")
 
