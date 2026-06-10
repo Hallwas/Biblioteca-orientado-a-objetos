@@ -1,4 +1,4 @@
-from datetime import date #Bliblioteca para a manipulação de datas
+from datetime import date # Biblioteca para a manipulação de datas
 
 class Emprestimo():
     def __init__(self, item, cliente, data_devolucao, esta_ativo):
@@ -56,4 +56,4 @@ class Emprestimo():
             multa = dias_atraso * 2.50  # R$ 2,50 por dia de atraso
             return float(multa)
         else:
-            return 0.0  # Sem atraso, multa zero
+            return 0.0

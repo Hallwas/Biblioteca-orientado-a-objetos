@@ -13,7 +13,7 @@ class Livro(Item):
     
     @autor.setter
     def autor(self, novo_autor):
-        if isinstance(novo_autor, str): # Inserido String
+        if isinstance(novo_autor, str): 
             self.__autor = novo_autor
         else:
             print("Erro: O autor deve ser um texto (String).")
@@ -24,7 +24,7 @@ class Livro(Item):
     
     @isbn.setter
     def isbn(self, novo_isbn):
-        if isinstance(novo_isbn, str): # Inserido String
+        if isinstance(novo_isbn, str): 
             self.__isbn = novo_isbn
         else:
             print("Erro: O ISBN deve ser um texto (String).")
@@ -35,7 +35,7 @@ class Livro(Item):
     
     @numero_paginas.setter
     def numero_paginas(self, numero):
-        if isinstance(numero, int) and numero > 0: # Inserido int e > que 0 
+        if isinstance(numero, int) and numero > 0:
             self.__numero_paginas = numero
         else:
             print("Erro: O número de páginas deve ser um número inteiro positivo.")

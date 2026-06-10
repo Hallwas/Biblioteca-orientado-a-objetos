@@ -40,10 +40,9 @@ class Biblioteca():
     def buscar_item(self, titulo):
         # loop de busca
         for item in self.lista_acervo:
-            # Se o título do item atual for igual ao título que estamos procurando
             if item.titulo == titulo:
                 print(f"Item encontrado: '{titulo}'")
                 return item # Retorna o objeto inteiro do Item
-        # Se não tiver nada no acervo
+            
         print(f"Aviso: O item '{titulo}' não foi encontrado no acervo.")
         return None

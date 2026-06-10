@@ -46,7 +46,7 @@ class Item:
         else:
             print("Erro: O ano de publicação deve ser um número inteiro positivo.")
 
-    # Método base de exibição — será sobrescrito (override) por Livro e Revista
+    # Método base de exibição
     def exibir_dados(self):
         print(f"Título: {self.titulo}")
         print(f"Ano de Publicação: {self.ano_publicacao}")

@@ -24,7 +24,6 @@ class Cliente(Pessoa):
     
     @multa_pendente.setter
     def multa_pendente(self, valor):
-        # Garante que a multa seja um número (int ou float) e não seja negativa
         if isinstance(valor, (float, int)) and valor >= 0:
             self.__multa_pendente = float(valor)
         else:

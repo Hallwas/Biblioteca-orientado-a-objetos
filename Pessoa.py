@@ -5,7 +5,7 @@ class Pessoa:
         self.telefone = telefone
         self.email = email
 
-    @property # O jeito que se implementa o Getter
+    @property # Getter
     def nome(self):
         return self.__nome
     
@@ -17,9 +17,8 @@ class Pessoa:
     def telefone(self):
         return self.__telefone
     
-    @telefone.setter # O jeito que se implementa o Setter
+    @telefone.setter # Setter
     def telefone(self, novo_telefone):
-        # Validação: só aceita se tiver pelo menos 8 caracteres
         if len(novo_telefone) >= 8:
             self.__telefone = novo_telefone
             print("Telefone atualizado com sucesso!")
@@ -32,9 +31,14 @@ class Pessoa:
     
     @email.setter
     def email(self, novo_email):
-        # Validação: só aceita se tiver um '@' e um '.' no texto
         if "@" in novo_email and "." in novo_email:
             self.__email = novo_email
             print("E-mail atualizado com sucesso!")
         else:
             print("Erro: Formato de e-mail inválido.")
+
+    def exibir_dados(self):
+        print(f"Nome: {self.nome}")
+        print(f"CPF: {self.cpf}")
+        print(f"Telefone: {self.telefone}")
+        print(f"E-mail: {self.email}")

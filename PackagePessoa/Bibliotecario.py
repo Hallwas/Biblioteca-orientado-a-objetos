@@ -12,7 +12,6 @@ class Bibliotecario(Pessoa): #Herda de Pessoa
     
     @id_funcionario.setter
     def id_funcionario(self, novo_id):
-        # Validação simples para garantir que o ID seja um número inteiro
         if isinstance(novo_id, int):
             self.__id_funcionario = novo_id
         else:
@@ -27,7 +26,7 @@ class Bibliotecario(Pessoa): #Herda de Pessoa
         self.__turno_trabalho = novo_turno
 
     #Funções
-    def autorizar_emprestimo(self, emprestimo): # emprestimo não é uma variável interna da classe Emprestimo. É o nome do parametro que a função está recebendo externamente
+    def autorizar_emprestimo(self, emprestimo): #
         if emprestimo.item.esta_disponivel == True:
             # self.nome herdado de Pessoa
             print(f"Bibliotecário(a) {self.nome} autorizou o empréstimo do item '{emprestimo.item.titulo}'.")

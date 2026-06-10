@@ -12,7 +12,7 @@ class Revista(Item):
     
     @edicao.setter
     def edicao(self, nova_edicao):
-        if isinstance(nova_edicao, int) and nova_edicao > 0: # Inserido int e > que 0 
+        if isinstance(nova_edicao, int) and nova_edicao > 0:
             self.__edicao = nova_edicao
         else:
             print("Erro: A edição deve ser um número inteiro positivo.")
