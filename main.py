@@ -8,7 +8,7 @@ from PackagePessoa.Bibliotecario import Bibliotecario
 from Emprestimo import Emprestimo
  
  
-# Instanciando a Biblioteca, Itens e Pessoas
+# Instanciando
 minha_biblioteca = Biblioteca(nome="Biblioteca Python")
  
 livro1   = Livro(id_item=1, esta_disponivel=True, titulo="O Senhor dos Anéis",ano_publicacao=1954, autor="J.R.R. Tolkien",isbn="978-0007136599", numero_paginas=1178)
@@ -23,21 +23,20 @@ bibliotecario_joao = Bibliotecario(nome="João Casagrande", cpf="555.666.777-88"
  
 minha_biblioteca.cadastrar_usuario(cliente_andre)
  
-# CENÁRIO 1 — Empréstimo de Livro com atraso e multa
+# CENÁRIO 1 - livro
 print("\nIniciando o empréstimo de um livro")
- 
-# Simulando uma data de devolução para 2 dias atrás
+
 data_vencida = date.today() - timedelta(days=2)
  
 # Criando o recibo do empréstimo
 contrato_livro = Emprestimo(item=livro1, cliente=cliente_andre, data_devolucao=data_vencida, esta_ativo=True)
  
-# Regra de Negócio: Bibliotecário tenta autorizar o empréstimo
+# Regra de Negócio 1
 autorizado = bibliotecario_joao.autorizar_emprestimo(contrato_livro)
 if autorizado:
     livro1.emprestar()
  
-# Regra de Negócio: Calculando multa na devolução
+# Regra de Negócio 2
 valor_multa = contrato_livro.calcular_multa()
  
 if valor_multa > 0:
@@ -48,22 +47,21 @@ if valor_multa > 0:
  
 contrato_livro.finalizar_emprestimo()
 
-# CENÁRIO 2 — Empréstimo de Revista sem atraso
+# CENÁRIO 2 — Revista
 print("\nIniciando o empréstimo de uma revista")
- 
-# Busca a revista no acervo antes de criar o contrato de emprestimo
+
+# Busca
 item_encontrado = minha_biblioteca.buscar_item("Superinteressante")
  
-# Data de devolução 5 dias no futuro — sem multa
 data_futura       = date.today() + timedelta(days=5)
 contrato_revista  = Emprestimo(item=item_encontrado, cliente=cliente_andre,data_devolucao=data_futura, esta_ativo=True)
  
-# Regra de Negócio 1 reutilizada com a revista
+# Regra de Negócio 1
 autorizado_revista = bibliotecario_joao.autorizar_emprestimo(contrato_revista)
 if autorizado_revista:
     revista1.emprestar()
  
-# Regra de Negócio 2: calcula multa — retorna zero (devolução no prazo)
+# Regra de Negócio 2
 valor_multa_revista = contrato_revista.calcular_multa()
 if valor_multa_revista > 0:
     print(f"Atraso detectado: aplicando multa de R$ {valor_multa_revista:.2f}.")
